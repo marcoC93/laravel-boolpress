@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Post;
 
-class PostTableSeeder extends Seeder
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,8 +19,6 @@ class PostTableSeeder extends Seeder
             $newPost= new Post();
             $newPost->name = $faker->name(10);
             $newPost->lastname = $faker->lastname(10);
-            $newPost->created_at = $faker-> unixTime();
-            $newPost->updated_at = $faker-> unixTime();
             $newPost->save();
         }
     }
