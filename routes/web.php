@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//
 
+Route::get('/', 'HomeController@index')->name('index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+/* Questa rotta viene creata in precedenza in quanto viene collegata la pag home tramite il middleware "auth" che si pone tra la pagina privata utente ed il form di login */
+// Route::get('/home', 'Admin\HomeController@index')->name('home')->middleware('auth');
+
+Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::get('/', 'HomeController@index')->name('index');
+});
