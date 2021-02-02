@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 //
 
 Route::get('/', 'HomeController@index')->name('index');
+
+
 Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 /* Questa rotta viene creata in precedenza in quanto viene collegata la pag home tramite il middleware "auth" che si pone tra la pagina privata utente ed il form di login */
 // Route::get('/home', 'Admin\HomeController@index')->name('home')->middleware('auth');

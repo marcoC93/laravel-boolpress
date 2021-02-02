@@ -15,6 +15,14 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <h1>
+                        Questa é la pagina Admin
+                    </h1>
+                    {{-- @foreach ($iterable as $key => $value)
+
+                    @endforeach --}}
+
+
                 </div>
             </div>
         </div>
