@@ -18,12 +18,8 @@
                     {{ __('You are logged in!') }}
 
                     <h1>
-                         Questa é la pagina guest
-
+                         Questa é la pagina contatti
                     </h1>
-                    <a href="{{route('guest.contatti')}}">
-                        Questa é la pag contatti
-                    </a>
                 </div>
             </div>
         </div>
