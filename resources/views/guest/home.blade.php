@@ -5,10 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard') }}
+
+                </div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                                        @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
 
@@ -21,6 +23,13 @@
                          Questa é la pagina guest
 
                     </h1>
+                    @foreach ($posts as $post)
+                        <li>
+                            <a href="#">
+                                {{ $post ->name}}
+                            </a>
+                        </li>
+                    @endforeach
                     <a href="{{route('guest.contatti')}}">
                         Questa é la pag contatti
                     </a>
