@@ -25,9 +25,10 @@
                     </h1>
                     @foreach ($posts as $post)
                         <li>
-                            <a href="#">
-                                {{ $post ->name}}
-                            </a>
+                            <h1>
+                                {{ $post ->title}}
+                            </h1>
+                            <p>{{$post ->content}}</p>
                         </li>
                     @endforeach
                     <a href="{{route('guest.contatti')}}">
