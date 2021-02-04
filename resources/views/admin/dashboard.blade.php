@@ -20,10 +20,9 @@
             </ul>
         </div>
         <div class="col-md-8">
-            <ul class="nav flex-column">
-                
-
-            </ul>
+            @foreach ($posts as $post)
+                <h1>{{$post ->title}}</h1>
+            @endforeach
         </div>
     </div>
 </div>

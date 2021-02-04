@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('index');
 
-// Cosi scrivendo all'interno delle rotte con namespace Auth disabiliteró le eventuali registrazioni in futuro alla mia applicazione
-Auth::routes(['register' => false]);
+Route::get('/admin', 'PostController@index')->name('dashboard');
 
-// qui semplicemente vengono aggiunte le rotte che passano per il namespace Auth e quindi richiedono login, permettono la registrazione ecc 
-// Auth::routes();
+// Cosi scrivendo all'interno delle rotte con namespace Auth disabiliteró le eventuali registrazioni in futuro alla mia applicazione
+// Auth::routes(['register' => false]);
+
+// qui semplicemente vengono aggiunte le rotte che passano per il namespace Auth e quindi richiedono login, permettono la registrazione ecc
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
