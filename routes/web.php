@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/admin', 'PostController@index')->name('dashboard');
+Route::get('/admin', 'PostController@index')->name('admin.dashboard');
+
 
 // Cosi scrivendo all'interno delle rotte con namespace Auth disabiliteró le eventuali registrazioni in futuro alla mia applicazione
 // Auth::routes(['register' => false]);
@@ -36,5 +37,5 @@ Route::get('/contatti', 'HomeController@contatti')->name('guest.contatti');
 // Route::get('/home', 'Admin\HomeController@index')->name('home')->middleware('auth');
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
-    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/', 'PostController@index')->name('index');
 });

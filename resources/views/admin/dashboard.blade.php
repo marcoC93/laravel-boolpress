@@ -20,9 +20,32 @@
             </ul>
         </div>
         <div class="col-md-8">
-            @foreach ($posts as $post)
-                <h1>{{$post ->title}}</h1>
-            @endforeach
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>TITOLO</td>
+                        <td>SLUG</td>
+                        <td>AZIONI</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($posts as $post)
+                        <tr>
+                            <td>
+                                {{$post ->id}}
+                            </td>
+                            <td>
+                                {{$post ->title}}
+                            </td>
+                            <td>
+                                {{$post ->slug}}
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
         </div>
     </div>
 </div>
